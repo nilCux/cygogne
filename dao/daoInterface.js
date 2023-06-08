@@ -51,4 +51,6 @@ class ModelDAO {
         throw new Error('Not implemented');
     }
   }
+
+  module.exports = { ModelDAO, PromptTemplateDAO, UserDAO }
   

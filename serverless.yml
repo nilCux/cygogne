@@ -13,11 +13,13 @@ service: aliyun-nodejs
 
 provider:
   name: aliyun
-  runtime: nodejs8
+  runtime: nodejs16.x
   credentials: ~/.aliyuncli/credentials # path must be absolute
+  stage: ${opt:stage, 'dev'}
 
 plugins:
   - serverless-aliyun-function-compute
+  - serverless-offline
 
 package:
   exclude:
