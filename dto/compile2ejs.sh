@@ -1,0 +1,1 @@
+protoc --js_out=import_style=ejs,binary:. requests.proto

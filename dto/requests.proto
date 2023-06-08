@@ -1,0 +1,132 @@
+syntax = "proto3";
+
+// ModelTask is a task that a user creates for using a stable diffusion model
+message ModelTask {
+    StableDiffusionParameter stableDiffusion = 1;
+}
+
+/**
+{
+  "images": [
+    "string"
+  ],
+  "parameters": {},
+  "info": "string"
+}
+*/
+message StableDiffusionResponse {
+    repeated string images = 1;
+    string parameters = 2;
+    string info = 3;
+}
+
+/**
+{
+  "enable_hr": false,
+  "denoising_strength": 0,
+  "firstphase_width": 0,
+  "firstphase_height": 0,
+  "hr_scale": 2,
+  "hr_upscaler": "string",
+  "hr_second_pass_steps": 0,
+  "hr_resize_x": 0,
+  "hr_resize_y": 0,
+  "hr_sampler_name": "string",
+  "hr_prompt": "",
+  "hr_negative_prompt": "",
+  "prompt": "",
+  "styles": [
+    "string"
+  ],
+  "seed": -1,
+  "subseed": -1,
+  "subseed_strength": 0,
+  "seed_resize_from_h": -1,
+  "seed_resize_from_w": -1,
+  "sampler_name": "string",
+  "batch_size": 1,
+  "n_iter": 1,
+  "steps": 50,
+  "cfg_scale": 7,
+  "width": 512,
+  "height": 512,
+  "restore_faces": false,
+  "tiling": false,
+  "do_not_save_samples": false,
+  "do_not_save_grid": false,
+  "negative_prompt": "string",
+  "eta": 0,
+  "s_min_uncond": 0,
+  "s_churn": 0,
+  "s_tmax": 0,
+  "s_tmin": 0,
+  "s_noise": 1,
+  "override_settings": {},
+  "override_settings_restore_afterwards": true,
+  "script_args": [],
+  "sampler_index": "Euler",
+  "script_name": "string",
+  "send_images": true,
+  "save_images": false,
+  "alwayson_scripts": {}
+}
+*/
+message StableDiffusionParameter {
+    StableDiffusionText2ImageParameter text2Image = 1;
+    // StableDiffusionImage2ImageParameter image2Image = 2;
+    // StableDiffusionInpaintingParameter inpainting = 3;
+}
+
+message StableDiffusionText2ImageParameter {
+    string Nonce = 1;
+    string TimeStamp = 2;
+    string SecretId = 3;
+    string Token = 4;
+    string prompt = 5;
+    string negativePrompt = 6;
+    int32 width = 7;
+    int32 height = 8;
+    string sampler_index = 9;
+    int32 steps = 10;
+    int64 seed = 11;
+    bool restore_face = 12;
+    int32 subseed = 13;
+    int32 subseed_strength = 14;
+    int32 seed_resize_from_w = 15;
+    int32 seed_resize_from_h = 16;
+    int32 cfg_scale = 17;
+    int32 eta = 18;
+    repeated string styles = 19;
+    bool enable_hr = 20;
+    int32 denoising_strength = 21;
+    int32 hr_scale = 22;
+    string hr_upscaler = 23;
+    int32 hr_second_pass_steps = 24;
+    int32 hr_resize_x = 25;
+    int32 hr_resize_y = 26;
+    string hr_prompt = 27;
+    string hr_negative_prompt = 28;
+    bool tiling = 29;
+    string script_name = 30;
+    repeated string script_args = 31;
+}
+
+message Task {
+    string credentials = 1;
+    string id = 2;
+    string userId = 3;
+
+    // The model that the task is using, 
+    int32 modelId = 4;
+    // Text 2 Image, Image 2 Image, Inpainting...
+    int32 taskType = 5;
+
+    // Predefined/optimised prompts with blanks (e.g. "A person with a [MASK] on their head")
+    int32 promptTemplateId = 6;
+    // The arguments to fill in the blanks (e.g. "mask")
+    repeated string arguments = 7;
+
+//     bytes initialImage = 7;
+//     bytes maskImage = 8;
+//     bytes controlImage = 9;
+}
