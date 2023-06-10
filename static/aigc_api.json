@@ -1,0 +1,25 @@
+[
+    {
+        "root_api": "https://api.aigcaas.cn/v2/application/"
+    },
+    {
+        "HeaderTemplate": {
+            "Nonce": "",
+            "Timestamp": "",
+            "SecretID": "",
+            "Token": ""
+        }
+    }
+]
+/**
+HEADER:
+
+Nonce	string	headers	防重放配置
+随机字符串（最大长度64位，推荐20位）且10秒内不可重复
+Timestamp	string	headers	发起请求时间戳
+与服务器时间差小于10秒
+SecretID	string	headers	密钥信息
+密钥配置中的 secret_id 配置
+Token	string	headers	签名结果
+sha256(Timestamp, SecretKey, Nonce)
+*/

@@ -1,0 +1,650 @@
+{"realistic_prompts": [
+    {
+        "readable_description": "人物场景",
+        "initial_positive_template": "1girl as princess Zelda <lora:ZeldaTOTK:0.74> ZeldaTOTK, jewelry, blonde hair, crown braid, short hair, triforce, solo, earrings, braid, necklace, bracelet, blue eyes, armlet, thick eyebrows, hairclip, photorealistic hair, dynamic eye shading, facial animation BREAK (Leather_biker_jacket:1.4),(Distressed_jeans:1.3),(Studded_ankle_boots:1.2),(Street_graffiti_background:1.4), (clothing aside) BREAK ((photorealistic), realistic face), medium breasts, beautifully detailed woman, realistic face, detailed mouth, extremely detailed eyes_and_face, beautiful attractive face, beautiful detailed eyes, (photorealistic), pronounced feminine feature, matte eyeshadow, eyelashes, eyeliner, perfect thin body, smooth skin, dynamic posing, toned body, flat belly, BREAK color HD photo, Olympus camera, full-body shot, high quality photo, masterpiece), HDR, 8K resolution, analogue RAW DSLR, best quality, absurdres, vivid vibrant colors, skin pores, intricate detail, (intricately detailed face_and_eyes), realistic human hands, sophisticated detail, (realistic lighting, sharp focus), centerfold, bokeh, official art, 8k wallpaper, ultra high res, professional photography",
+        "positive_template": "${object}，${jewelry}，${haircolor} hair，${haircut}，${body_parts}, ${body_type}，${eyecolor} eyes，${wearings}, ${facial_features}, ${lighting}, photorealistic hair, dynamic eye shading, facial animation,(Street_graffiti_background:1.4), (clothing aside) BREAK ((photorealistic), realistic face), medium breasts, realistic face, detailed mouth, extremely detailed eyes_and_face, beautiful attractive face, beautiful detailed eyes, (photorealistic), pronounced feminine feature, smooth skin, dynamic posing, toned body, flat belly, BREAK color HD photo, Olympus camera, high quality photo, masterpiece), HDR, 8K resolution, analogue RAW DSLR, best quality, absurdres, vivid vibrant colors, skin pores, intricate detail, (intricately detailed face_and_eyes), realistic human hands, sophisticated detail, (realistic lighting, sharp focus), centerfold, bokeh, official art, 8k wallpaper, ultra high res, professional photography",
+        "negative_prompt":"ESAYNEGATIVE, ng_deepnegative_v1_75t, ((badhandv4)), (worst quality:2), (low quality:2), (normal quality:2), lowres, ((monochrome)), ((grayscale)), watermark",
+        "positive_args": [
+            {
+                "caption": "object",
+                "description": "人物",
+                "values": [
+                    {
+                        "小姐姐": "girl"
+                    },
+                    {
+                        "小哥哥": "22 age boy"
+                    },
+                    {
+                        "姐姐": "lady"
+                    },
+                    {
+                        "弟弟": "young boy"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "haircut",
+                "description": "发型",
+                "values": [
+                    {"短发": "short"},
+                    {"中长发": "mid-long"},
+                    {"长发": "long"},
+                    {"直发": "straight"}
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "haircolor",
+                "description": "头发颜色",
+                "values": [
+                    {"金色": "blonde"},
+                    {"棕色": "brown"},
+                    {"黑色": "black"},
+                    {"红色": "red"}
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "eyecolor",
+                "description": "眼睛颜色",
+                "values": [
+                    {"蓝色": "blue"},
+                    {"绿色": "green"},
+                    {"褐色": "hazel"},
+                    {"棕色": "brown"}
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "jewelry",
+                "description": "珠宝",
+                "values": [
+                    {"耳环": "earrings"},
+                    {"项链": "necklace"},
+                    {"手镯": "bracelet"},
+                    {"臂环": "armlet"}
+                ],
+                "multi_selection_limit": 3
+            },
+            {
+                "caption": "facial_features",
+                "description": "面部特征",
+                "values": [
+                    {"细眉": "thin eyebrows"},
+                    {"浓眉": "thick eyebrows"},
+                    {"长睫毛": "long eyelashes"},
+                    {"短睫毛": "short eyelashes"}
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "body_type",
+                "description": "身体类型",
+                "values": [
+                    {"瘦": "slim body"},
+                    {"曲线": "curvy body"},
+                    {"健美": "athletic body"},
+                    {"一般": "average body"}
+                ]
+            },
+            {
+                "caption": "camera_type",
+                "description": "相机类型",
+                "values": [
+                    {"佳能": "Canon camera"},
+                    {"尼康": "Nikon camera"},
+                    {"索尼": "Sony camera"},
+                    {"奥林巴斯": "Olympus camera"}
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "lighting",
+                "description": "照明",
+                "values": [
+                    {"自然光": "natural lighting"},
+                    {"工作室光": "studio lighting"},
+                    {"户外光": "outdoor lighting"},
+                    {"室内光": "indoor lighting"}
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "body_parts",
+                "description": "取景",
+                "values": [
+                    {"全身": "fullbody"},
+                    {"半身": "upperbody"}
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "background",
+                "description": "背景",
+                "values": [
+                    {"森林": "forest"},
+                    {"海滩": "beach"},
+                    {"城市": "city"},
+                    {"草地": "grassland"},
+                    {"山脉": "mountain"},
+                    {"沙漠": "desert"},
+                    {"雪地": "snowfield"},
+                    {"夜空": "night sky"},
+                    {"花园": "garden"},
+                    {"湖泊": "lake"},
+                    {"公园": "park"},
+                    {"瀑布": "waterfall"},
+                    {"阳台": "balcony"},
+                    {"路边": "roadside"},
+                    {"图书馆": "library"},
+                    {"校园": "campus"},
+                    {"购物中心": "shopping mall"},
+                    {"咖啡店": "coffee shop"},
+                    {"卧室": "bedroom"},
+                    {"办公室": "office"},
+                    {"厨房": "kitchen"},
+                    {"画廊": "gallery"},
+                    {"海洋": "ocean"},
+                    {"河流": "river"}
+                ],
+                "multi_selection_limit": 3
+            }
+        ]
+    },
+    {
+        "readable_description": "怪兽场景",
+        "initial_positive_template": "(orcx-uruks), an orc, lord of the rings orc, uruks, (smokerealistic:0.8), (helmet:1.2), smiling, hyper realistic, ultra detailed, epic cinematic, soft studio lights, rim light, absurd, unreal, 8K",
+        "positive_template": "${monster}，${creature_series}，${special_effect}，${wearings}，${expression}，hyper realistic，ultra detailed，${scene}，${lighting}，absurd，unreal，8K",
+        "negative_prompt": "hands, anime, easynegative, bad-hands-5, [negativebs:0.2], (bad faces:1.2), (bad eyes:1.2), (low quality, worst quality:1.3), nude breast, nudity",
+        "positive_args": [
+            {
+                "caption": "monster",
+                "description": "怪兽",
+                "values": [
+                    {
+                        "兽人": "orc"
+                    },
+                    {
+                        "巨龙": "dragon"
+                    },
+                    {
+                        "海怪": "sea monster"
+                    },
+                    {
+                        "僵尸": "zombie"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "creature_series",
+                "description": "生物系列",
+                "values": [
+                    {
+                        "指环王系列": "lord of the rings"
+                    },
+                    {
+                        "哈利·波特系列": "harry potter"
+                    },
+                    {
+                        "权力的游戏系列": "game of thrones"
+                    },
+                    {
+                        "星球大战系列": "star wars"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "special_effect",
+                "description": "特效",
+                "values": [
+                    {
+                        "烟雾": "smokerealistic"
+                    },
+                    {
+                        "火焰": "flamerealistic"
+                    },
+                    {
+                        "闪电": "lightningrealistic"
+                    },
+                    {
+                        "雾气": "fogrealistic"
+                    }
+                ],
+                "multi_selection_limit": 2
+            },
+            {
+                "caption": "wearings",
+                "description": "装备",
+                "values": [
+                    {
+                        "头盔": "helmet"
+                    },
+                    {
+                        "盾牌": "shield"
+                    },
+                    {
+                        "武器": "weapon"
+                    },
+                    {
+                        "盔甲": "armor"
+                    },
+                    {
+                        "魔杖": "wand"
+                    }
+                ],
+                "multi_selection_limit": 3
+            },
+            {
+                "caption": "expression",
+                "description": "表情",
+                "values": [
+                    {
+                        "微笑": "smiling"
+                    },
+                    {
+                        "愤怒": "angry"
+                    },
+                    {
+                        "疑惑": "confused"
+                    },
+                    {
+                        "惊恐": "scared"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "scene",
+                "description": "场景",
+                "values": [
+                    {
+                        "史诗电影": "epic cinematic"
+                    },
+                    {
+                        "魔幻冒险": "fantasy adventure"
+                    },
+                    {
+                        "黑暗恐怖": "dark horror"
+                    },
+                    {
+                        "科幻世界": "sci-fi"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "lighting",
+                "description": "灯光",
+                "values": [
+                    {
+                        "柔和的工作室灯光": "soft studio lights"
+                    },
+                    {
+                        "边缘光": "rim light"
+                    },
+                    {
+                        "硬直射灯": "hard spotlight"
+                    },
+                    {
+                        "暖色调": "warm tones"
+                    }
+                ],
+                "multi_selection_limit": 1
+            }
+        ]
+    },
+    {
+        "readable_description": "模特场景",
+        "initial_positive_template": "RAW, analog style, beautiful woman with striking features sitting on a chair. She is sitting and spreading her legs while also wearing a white shirt and a black skirt, resembling the look of an office lady. You are able to see her panties underwear between her spreaded legs. Her arms are positioned resting on her knees. She should have long, flowing hair, a captivating gaze, and an alluring expression. The background should be neutral and simple, allowing the woman to be the image's focal point. Please pay close attention to the details, such as the highlights and shadows on her face and hair, to create a lifelike and realistic image. Experiment with different lighting techniques to enhance the mood and atmosphere of the picture. The final product should be a masterpiece that captures the seduction and beauty of the woman, ((highly detailed skin, skin details)), sharp focus, volumetric fog, 8k UHD, DSLR, high quality, film grain, Fujifilm XT3",
+        "positive_template": "RAW, analog style, beautiful ${gender} with striking features sitting on a chair. She is ${posture} while also wearing a ${tops} and a ${bottoms}, resembling the look of an office lady. You are able to see her ${underwear} between her spreaded legs. Her arms are positioned ${arms_position}. She should have ${hair_length}, flowing hair, a captivating gaze, and an alluring expression. The background should be ${background}, allowing the woman to be the image's focal point. Please pay close attention to the details, such as the highlights and shadows on her face and hair, to create a lifelike and realistic image. Experiment with different ${lighting} techniques to enhance the mood and atmosphere of the picture. The final product should be a masterpiece that captures the seduction and beauty of the woman, ((highly detailed skin, skin details)), sharp focus, volumetric fog, 8k UHD, DSLR, high quality, film grain, Fujifilm XT3",
+        "negative_prompt": "((((big hands, un-detailed skin, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime)))), (((ugly mouth, ugly eyes, missing teeth, crooked teeth, close up, cropped, out of frame))), worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, naked chest, naked breasts, arms resting between legs, weird shaped clothing, short triangle skirt, unrealistic proportions; avoid naked breasts, avoid NSFW content, avoid missing clothing",
+        "positive_args": [
+            {
+                "caption": "gender",
+                "description": "性别",
+                "values": [
+                    {
+                        "女士": "woman"
+                    },
+                    {
+                        "男士": "man"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "posture",
+                "description": "姿势",
+                "values": [
+                    {
+                        "坐着，双腿分开": "sitting and spreading her legs"
+                    },
+                    {
+                        "站立": "standing"
+                    },
+                    {
+                        "跪着": "kneeling"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "tops",
+                "description": "上衣",
+                "values": [
+                    {
+                        "白衬衫": "white shirt"
+                    },
+                    {
+                        "蓝衬衫": "blue shirt"
+                    },
+                    {
+                        "黑衬衫": "black shirt"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "bottoms",
+                "description": "下装",
+                "values": [
+                    {
+                        "黑裙": "black skirt"
+                    },
+                    {
+                        "蓝裤": "blue pants"
+                    },
+                    {
+                        "白裤": "white pants"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "underwear",
+                "description": "内衣",
+                "values": [
+                    {
+                        "内裤": "panties"
+                    },
+                    {
+                        "内衣": "bra"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "arms_position",
+                "description": "手臂位置",
+                "values": [
+                    {
+                        "放在膝盖上": "resting on her knees"
+                    },
+                    {
+                        "放在腿边": "resting beside her legs"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "hair_length",
+                "description": "头发长度",
+                "values": [
+                    {
+                        "长": "long"
+                    },
+                    {
+                        "中": "medium"
+                    },
+                    {
+                        "短": "short"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "background",
+                "description": "背景",
+                "values": [
+                    {
+                        "中性简单": "neutral and simple"
+                    },
+                    {
+                        "复杂多彩": "complex and colorful"
+                    },
+                    {
+                        "自然景观": "natural scenery"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "lighting",
+                "description": "灯光",
+                "values": [
+                    {
+                        "自然光": "natural light"
+                    },
+                    {
+                        "工作室灯光": "studio light"
+                    },
+                    {
+                        "柔光": "soft light"
+                    },
+                    {
+                        "硬光": "hard light"
+                    }
+                ],
+                "multi_selection_limit": 1
+            }
+        ]
+    },
+    {
+        "readable_description": "废弃城市后末世场景",
+        "initial_positive_template": "RAW photo, Of an Abandoned City Scene, Post Apocalypse (high detailed Scene:1.2), 8k uhd, dslr, high quality, Fujifilm XT3, full focus background <lora:epiNoiseoffset_v2:1.5>",
+        "positive_template": "RAW photo, Of an ${scene}, Post Apocalypse (high detailed Scene:1.2), 8k uhd, dslr, high quality, Fujifilm XT3, full focus ${background} <lora:epiNoiseoffset_v2:1.5>",
+        "negative_prompt": "(deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime:1.4), text, close up, cropped, out of frame, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck",
+        "positive_args": [
+            {
+                "caption": "scene",
+                "description": "场景",
+                "values": [
+                    {
+                        "废弃城市": "Abandoned City Scene"
+                    },
+                    {
+                        "废弃乡村": "Abandoned Rural Scene"
+                    },
+                    {
+                        "废弃工厂": "Abandoned Factory Scene"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "background",
+                "description": "背景",
+                "values": [
+                    {
+                        "完全聚焦": "full focus"
+                    },
+                    {
+                        "部分聚焦": "partial focus"
+                    },
+                    {
+                        "背景模糊": "blurred"
+                    }
+                ],
+                "multi_selection_limit": 1
+            }
+        ]
+    },
+    {
+        "readable_description": "古代战争场景",
+        "initial_positive_template": "(best quality), extremely delicate and beautiful, Amazing, finely detail, masterpiece, ultra-detailed, highres,(best illustration), (best shadow),intricate,stunning skin details,sharp focus, volumetric fog, 8k UHD, DSLR, high quality, (film grain:1.4), fantasy,(black and (red) tone impression) Armored Chinese ancient soldiers ride on their (heavily armored warhorses:1.4), charging across the battlefield <lora:add_detail:1> <lora:EABA_v1:0.8> <lora:Smoke:0.8>",
+        "positive_template": "(best quality), extremely delicate and beautiful, Amazing, finely detail, masterpiece, ultra-detailed, highres,(best illustration), (best shadow),intricate,stunning skin details,sharp focus, volumetric fog, 8k UHD, DSLR, high quality, (film grain:1.4), fantasy,(black and (red) tone impression) Armored ${nationality} ancient soldiers ride on their (heavily armored warhorses:1.4), charging across the battlefield <lora:add_detail:1> <lora:EABA_v1:0.8> <lora:Smoke:0.8>",
+        "negative_prompt": "(easynegative:1.0),(bad-hands-5:1.0),(realisticvision-negative-embedding:1.0), (ng_deepnegative_v1_75t:1.0)",
+        "positive_args": [
+            {
+                "caption": "nationality",
+                "description": "国家",
+                "values": [
+                    {
+                        "中国": "Chinese"
+                    },
+                    {
+                        "日本": "Japanese"
+                    },
+                    {
+                        "罗马": "Roman"
+                    }
+                ],
+                "multi_selection_limit": 1
+            }
+        ]
+    }    
+],
+"anime_prompts": [
+    {
+        "readable_description": "轻动漫风人物画像",
+        "initial_positive_template": "cashier, cute Mongolian girl, dazzling Auburn eyes, unaligned breasts, Khaki two side up hair, A deserted highway with abandoned vehicles and no signs of life., thick lines, anime style, wushen\\(full)\\ Christmas lights, Maidcore, Cultcore, airbrush",
+        "positive_template": "cashier, cute ${nationality} girl, dazzling ${eye_color} eyes, unaligned breasts, ${hair_color} two side up hair, A deserted highway with abandoned vehicles and no signs of life., thick lines, anime style, wushen\\(full)\\ Christmas lights, Maidcore, Cultcore, airbrush",
+        "negative_prompt": "blurry, easynegative bad-hands-5, (worst quality, low quality:1.4), loli, child, young, teenager, childlike, teen",
+        "positive_args": [
+            {
+                "caption": "nationality",
+                "description": "国家",
+                "values": [
+                    {
+                        "蒙古": "Mongolian"
+                    },
+                    {
+                        "日本": "Japanese"
+                    },
+                    {
+                        "中国": "Chinese"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "eye_color",
+                "description": "眼睛颜色",
+                "values": [
+                    {
+                        "棕色": "Brown"
+                    },
+                    {
+                        "蓝色": "Blue"
+                    },
+                    {
+                        "绿色": "Green"
+                    },
+                    {
+                        "琥珀色": "Amber"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "hair_color",
+                "description": "头发颜色",
+                "values": [
+                    {
+                        "黑色": "Black"
+                    },
+                    {
+                        "棕色": "Brown"
+                    },
+                    {
+                        "金色": "Blonde"
+                    },
+                    {
+                        "卡其色": "Khaki"
+                    }
+                ],
+                "multi_selection_limit": 1
+            }
+        ]
+    },
+    {
+        "readable_description": "动漫风格可爱的怪物",
+        "initial_positive_template": "Gnoll Pack Lord boy, cute, sexy, cartoon character, super deformed, anime, manga, cosplay, pop culture, eye-catching, colorful, fun, quirky, adorable, wearing trendy clothing, in a whimsical and vibrant environment, <lora:CuteCreatures:0.9>",
+        "positive_template": "${character_name}, cute, sexy, cartoon character, super deformed, anime, manga, cosplay, pop culture, eye-catching, colorful, fun, quirky, adorable, wearing trendy clothing, in a whimsical and vibrant environment, <lora:CuteCreatures:0.9>",
+        "negative_prompt": "blurry, easynegative bad-hands-5, (worst quality, low quality:1.4), loli, child, young, teenager, childlike, teen",
+        "positive_args": [
+            {
+                "caption": "character_name",
+                "description": "角色名",
+                "values": [
+                    {
+                        "豺狼人领主男孩": "Gnoll Pack Lord boy"
+                    },
+                    {
+                        "可爱的小魔怪": "Cute little monster"
+                    },
+                    {
+                        "冒险小精灵": "Adventurous little sprite"
+                    }
+                ],
+                "multi_selection_limit": 1
+            }
+        ]
+    },
+    {
+        "readable_description": "日式动漫风格的可爱海盗",
+        "initial_positive_template": "(masterpiece), (best_quality), (ultra-detailed), (illustration), (welcoming), 1girl, (steampunk monk pirate:1.3), (in a Russian room:1.3), scenery, (full body:1.4), matte ginger hair, bombshell hime cut, [:formal costume design:0.2], muscular,lying on ground, (african, dark skin:0.6), official art, vivid color, finely detailed, hyper detailed, 8k, high resolution illustration, absurdres, intricate detail, (happy, (smile:0.4), (blush:1.3):0.8)<lora:GoodHands-beta2:1.5><lora:EnvyCuteMix02:2>",
+        "positive_template": "${gender}, welcoming, (steampunk monk pirate:1.3), in a Russian room, scenery, full body, ${hair_color} hair, bombshell hime cut, [:formal costume design:0.2], muscular,lying on ground, ${skin_color}, official art, vivid color, finely detailed, hyper detailed, 8k, high resolution illustration, absurdres, intricate detail, happy, smile, blush <lora:GoodHands-beta2:1.5><lora:EnvyCuteMix02:2>",
+        "negative_prompt": "(nsfw, extra fingers, deformed hands, polydactyl, extra arms:1.3), (worst quality, low quality, poor quality, bad quality:1.35)",
+        "positive_args": [
+            {
+                "caption": "gender",
+                "description": "性别",
+                "values": [
+                    {
+                        "女性": "1girl"
+                    },
+                    {
+                        "男性": "1boy"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "hair_color",
+                "description": "发色",
+                "values": [
+                    {
+                        "赤褐色的": "matte ginger"
+                    },
+                    {
+                        "黑色的": "black"
+                    },
+                    {
+                        "金色的": "blonde"
+                    }
+                ],
+                "multi_selection_limit": 1
+            },
+            {
+                "caption": "skin_color",
+                "description": "肤色",
+                "values": [
+                    {
+                        "深色皮肤": "african, dark skin"
+                    },
+                    {
+                        "浅色皮肤": "asian, light skin"
+                    }
+                ],
+                "multi_selection_limit": 1
+            }
+        ]
+    }
+    
+]
+}

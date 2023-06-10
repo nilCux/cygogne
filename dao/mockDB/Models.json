@@ -1,0 +1,53 @@
+{
+"SD_Model": [
+    {
+       "model_id":0,
+       "model_name":"Simply Beautiful",
+       "version": "V10",
+       "model_api_id":"simplyBeautiful_v10",
+       "t2i_keyword": "/api/text2img",
+       "i2i_keyword": "/api/img2img",
+       "suggested_configuration":[
+          
+       ]
+    },
+    {
+        "model_id": 1,
+        "model_name": "Realistic Vision V2.0",
+        "version": "v2.0",
+        "model_api_id": "dreamlikePhotoreal20_dreamlikePhotoreal20",
+        "t2i_keyword": "/api/text2img",
+        "i2i_keyword": "/api/img2img",
+        "suggested_configuration": [
+
+        ]
+    }    
+ ],
+
+ "Lora": [
+    {
+        "model_id": "0",
+        "model_name": "mahalaiuniform",
+        "description_key_word": ["OL", "制服"],
+        "trigger_word": "<lora:mahalaiuniform-000001:0.8>"
+    },
+    {
+        "model_id": "1",
+        "model_name": "hanfu",
+        "description_key_word": ["汉服唐风"],
+        "trigger_word": "<lora:hanfuTang_v32:0.5>"
+    },
+    {
+        "model_id": "2",
+        "model_name": "kCuteCreatures",
+        "description_key_word": ["小怪兽", "未知生物"],
+        "trigger_word": "<lora:CuteCreatures:0.9>"
+    },
+    {
+        "model_id": "3",
+        "model_name":"PiratePunkAI",
+        "description_key_word":["赛博朋克海盗"],
+        "trigger_word": "<lora:PiratePunkAIV4-000004:.9>"
+    }
+ ]
+}
