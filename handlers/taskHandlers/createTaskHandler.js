@@ -1,5 +1,4 @@
 const BaseHandler = require('../baseHandler');
-console.log(BaseHandler);
 
 class CreateTaskHandler extends BaseHandler {
     handle(request, context) {

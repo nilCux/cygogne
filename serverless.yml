@@ -34,15 +34,27 @@ functions:
       - http:
           path: tasks
           method: post
-  checkStatus:
-    handler: tasks.checkStatus
+  # checkStatus:
+  #   handler: tasks.checkStatus
+  #   events:
+  #     - http:
+  #         path: tasks/{id}/status
+  #         method: get
+  # getResult:
+  #   handler: tasks.getResult
+  #   events:
+  #     - http:
+  #         path: tasks/{id}/result
+  #         method: get
+  getAllModels:
+    handler: models.getALL
     events:
       - http:
-          path: tasks/{id}/status
+          path: models
           method: get
-  getResult:
-    handler: tasks.getResult
+  getModel:
+    handler: models.getOne
     events:
       - http:
-          path: tasks/{id}/result
+          path: models/{id}
           method: get

@@ -1,16 +1,14 @@
 const awilix = require('awilix');
-
-const { MongoModelDAO, MongoPromptTemplateDAO, MongoUserDAO } = require('../dao/daoMongoImpl');
-const CreateTaskHandler = require('../handlers/taskHandlers/createTaskHandler')
-// Create a container
 const container = awilix.createContainer();
 
-// Register your dependencies
+const CreateTaskHandler = require('../handlers/taskHandlers/createTaskHandler');
+const GetAllModelsHandler = require('../handlers/modelHandlers/getAllModelsHandler');
+const GetOneModelHandler = require('../handlers/modelHandlers/getOneModelHandler')
+
 container.register({
-  modelDao: awilix.asClass(MongoModelDAO).singleton(),
-  promptTemplateDao: awilix.asClass(MongoPromptTemplateDAO).singleton(),
-  userDao: awilix.asClass(MongoUserDAO).singleton(),
-  createTaskHandler: awilix.asClass(CreateTaskHandler).singleton()
+  createTaskHandler: awilix.asClass(CreateTaskHandler).singleton(),
+  getAllModelsHandler: awilix.asClass(GetAllModelsHandler).singleton(),
+  getOneModelHandler: awilix.asClass(GetOneModelHandler).singleton()
 });
 
-module.exports = container;
+module.exports = container
