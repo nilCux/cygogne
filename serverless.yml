@@ -29,10 +29,10 @@ package:
 
 functions:
   createTask:
-    handler: tasks.create
+    handler: tasks.createText2Image
     events:
       - http:
-          path: tasks
+          path: tasks/text2img
           method: post
   # checkStatus:
   #   handler: tasks.checkStatus

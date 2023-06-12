@@ -3,7 +3,7 @@
 const container = require('./di/container');
 const REQUESTS = require('./dto/requests_pb');
 
-async function create(event) {
+async function createText2Image(event) {
   try {
     // Assuming `event.body` contains the binary data
     let bytes = new Uint8Array(Buffer.from(event.body, 'base64'));  // if the data is base64-encoded
