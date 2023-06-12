@@ -1,4 +1,4 @@
-const BaseHandler = require('../baseHandler');
+const BaseHandler = require('../baseHandler')
 const serviceContainer = require('../../di/service_container')
 
 class GetOneModelHandler extends BaseHandler {

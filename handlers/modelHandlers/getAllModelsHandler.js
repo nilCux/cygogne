@@ -1,4 +1,4 @@
-const BaseHandler = require('../baseHandler');
+const BaseHandler = require('../baseHandler')
 const serviceContainer = require('../../di/service_container')
 
 class GetAllModelsHandler extends BaseHandler {
@@ -8,3 +8,6 @@ class GetAllModelsHandler extends BaseHandler {
 }
 
 module.exports = GetAllModelsHandler
+
+g = new GetAllModelsHandler()
+g.handle().then(v=>console.log(v))
