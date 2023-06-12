@@ -25,9 +25,6 @@ class CreateT2ITaskHandler extends BaseHandler {
         // header_content.Timestamp = new Date().toISOString();
         header_content.Timestamp = Math.floor(Date.now() / 1000).toString();
         header_content.SecretID = AIGC_CONF.Secret_ID
-        console.log("TimeStamp: %s", header_content.Timestamp)
-        console.log("Secretkey: %s", AIGC_CONF.Secret_key)
-        console.log("Nonce: %s", header_content.Nonce)
         let dataToHash = header_content.Timestamp + AIGC_CONF.Secret_key + header_content.Nonce;
         header_content.Token = this.sha256(dataToHash);
 
@@ -39,10 +36,12 @@ class CreateT2ITaskHandler extends BaseHandler {
                 response = await axios.post(API_URL, body_content, {
                 headers: header_content
             }, {
-                timeout: 5000,  // Timeout of 5 seconds
+                timeout: 60000,  // Timeout of 5 seconds
             });
         
             console.log(response.data);
+            console.log(response)
+            console.lon(response.status)
           } catch (error) {
             if (error.code === 'ECONNABORTED') {
                 console.error('Request timed out');
