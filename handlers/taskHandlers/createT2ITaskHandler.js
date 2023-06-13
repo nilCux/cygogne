@@ -20,9 +20,12 @@ class CreateT2ITaskHandler extends BaseHandler {
             this.Models_Cache = JSON.parse(await serviceContainer.resolve("modelDao").getAllModels())
         }
 
-        for (model_param in MOCK_ALL_MODELS.SD_Model) {
-            if (model_param['model_id'] == request.model_id)
-            API_URL = AIGC_API.root_api+model_param["model_api_id"]+model_param["t2i_keyword"]
+        let API_URL
+        for (let model_param_index in MOCK_ALL_MODELS.SD_Model) {
+            let model_param = MOCK_ALL_MODELS.SD_Model[model_param_index]
+
+            if (model_param.model_id == parseInt(request['model_id']))
+            API_URL = AIGC_API.root_api+model_param.model_api_id+model_param.t2i_keyword
         }
       
 
@@ -35,7 +38,7 @@ class CreateT2ITaskHandler extends BaseHandler {
         header_content.Token = this.sha256(dataToHash)
 
         let body_content = _.cloneDeep(BODY_TEMPLATE)
-        body_content.prompt = request.prompt
+        body_content.prompt = request['positive_prompt']
 
         try {
             const response = await axios.post(API_URL, body_content, {
@@ -46,18 +49,17 @@ class CreateT2ITaskHandler extends BaseHandler {
     
             if (response.status == 200) {
                 const async_req_key = response.data["Aigcaas-Request-Id"]
-                console.log("Async request key: "+async_req_key)
     
                 let async_response
                 while (true) {
-                    await this.sleep(5000)
+                    await this.sleep(5)
                     header_content.Nonce = crypto.randomBytes(16).toString('hex')
                     header_content.Timestamp = Math.floor(Date.now() / 1000).toString()
                     dataToHash = header_content.Timestamp + AIGC_CONF.Secret_key + header_content.Nonce
                     header_content.Token = this.sha256(dataToHash)
                     header_content.RequestID = async_req_key
     
-                    async_response = await axios.get('https://api.aigcaas.cn/v2/async', { headers: header_content })
+                    async_response = await axios.get('https://api.aigcaas.cn/v2/async', { headers: header_content}, {timeout: 60000})
 
                     if (async_response.headers["aigcaas-status"]=="True") {
                         let base64Data = async_response.data["images"][0]
@@ -80,7 +82,8 @@ class CreateT2ITaskHandler extends BaseHandler {
                         break
                     }
                 }
-                return async_response.data
+
+                return async_response.data["images"][0]
             }
         } catch (error) {
             if (error.code === 'ECONNABORTED') {
@@ -105,7 +108,6 @@ class CreateT2ITaskHandler extends BaseHandler {
     }
 
     async sleep(ms) {
-        console.log("Seep")
         return new Promise((resolve, reject) => {
             setTimeout(resolve, ms)
         })

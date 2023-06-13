@@ -17,6 +17,7 @@
   "dependencies": {
     "awilix": "^8.0.1",
     "google-protobuf": "^3.21.2",
+    "joi": "^17.9.2",
     "mongoose": "^7.2.2"
   }
 }

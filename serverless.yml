@@ -30,6 +30,7 @@ package:
 functions:
   createTask:
     handler: tasks.createText2Image
+    timeout: 60
     events:
       - http:
           path: tasks/text2img
@@ -48,13 +49,19 @@ functions:
   #         method: get
   getAllModels:
     handler: models.getALL
+    timeout: 2
     events:
       - http:
           path: models
           method: get
   getModel:
     handler: models.getOne
+    timeout: 2
     events:
       - http:
           path: models/{id}
           method: get
+
+custom:
+  serverless-offline:
+    noTimeout: false

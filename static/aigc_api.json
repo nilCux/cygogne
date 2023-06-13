@@ -5,7 +5,6 @@
         "Nonce": "",
         "Timestamp": "",
         "SecretID": "",
-        "Token": "",
-        "Aigcaas-Async": "False"
+        "Token": ""
     }
 }
