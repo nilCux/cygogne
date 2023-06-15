@@ -82,9 +82,13 @@ class CreateT2ITaskHandler extends BaseHandler {
                         break
                     }
                 }
-
-                return async_response.data["images"][0]
-            }
+                let responseObj = {
+                    image: async_response.data["images"][0], 
+                    image_with_head: "data:image/png;base64," + async_response.data["images"][0]
+                }
+                
+                return JSON.stringify(responseObj)
+             }
         } catch (error) {
             if (error.code === 'ECONNABORTED') {
                 console.error('Request timed out')

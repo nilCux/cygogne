@@ -7,7 +7,7 @@ const Joi = require('joi')
 const resuestBodyScheme = Joi.object({
   tool_id: Joi.string().min(1).max(30).required(),
   model_id: Joi.string().min(1).max(30).required(),
-  positive_prompt: Joi.string().min(0).max(1000).required(),
+  positive_prompt: Joi.string().min(0).max(3000).required(),
   size_id: Joi.number().integer().min(0).max(2000).optional(),
   negative_prompt: Joi.string().min(0).max(1000).optional(),
 })
