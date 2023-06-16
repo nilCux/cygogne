@@ -17,7 +17,7 @@ class CreateT2ITaskHandler extends BaseHandler {
 
     async handle(request, context) {
         if (this.Models_Cache == undefined) {
-            this.Models_Cache = JSON.parse(await serviceContainer.resolve("modelDao").getAllModels())
+            this.Models_Cache = await serviceContainer.resolve("modelDao").getAllModels()
         }
 
         let API_URL
@@ -82,12 +82,13 @@ class CreateT2ITaskHandler extends BaseHandler {
                         break
                     }
                 }
-                let responseObj = {
+
+                let responseBody = {
                     image: async_response.data["images"][0], 
                     image_with_head: "data:image/png;base64," + async_response.data["images"][0]
                 }
                 
-                return JSON.stringify(responseObj)
+                return {body: JSON.stringify(responseBody)}
              }
         } catch (error) {
             if (error.code === 'ECONNABORTED') {

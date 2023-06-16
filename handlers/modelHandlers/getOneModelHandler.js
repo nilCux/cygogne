@@ -3,7 +3,8 @@ const serviceContainer = require('../../di/service_container')
 
 class GetOneModelHandler extends BaseHandler {
     async handle(id) {
-        return await serviceContainer.resolve("modelDao").getModel(id)
+        let responseBody = await serviceContainer.resolve("modelDao").getModel(id)
+        return {body: JSON.stringify(responseBody)}
     }
 }
 

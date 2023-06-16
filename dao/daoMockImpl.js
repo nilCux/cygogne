@@ -30,7 +30,7 @@ for (let modelIndex in MODELS_SOURCE.SD_Model) {
 class MockModelDAO extends ModelDAO {
     async getModel(id) {
         id = id%(Object.keys(ALL_MODELS).length)
-        return JSON.stringify(ALL_MODELS[id])
+        return ALL_MODELS[id]
     }
 
     async saveModel(model) {
@@ -42,7 +42,7 @@ class MockModelDAO extends ModelDAO {
     }
 
     async getAllModels() {
-        return JSON.stringify(ALL_MODELS)
+        return ALL_MODELS
     }
 
 }
